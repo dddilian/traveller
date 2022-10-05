@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
+
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <title>Document</title>
+
+    <style>
+        .navbar {
+            border-radius: 10px;
+        }
+
+        #homePage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        #errorDiv {
+            font-size: 40px;
+            margin: auto;
+        }
+
+        .dataContainer {
+            display: flex;
+            border: 3px solid black;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;
+        }
+
+        #searchFormContainer {
+            margin-top: 10px;
+            width: 50%;
+        }
+
+
+        iframe {
+            height: 450px;
+            width: 600px;
+            border: none;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="container-xl">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="#home">Piche li?</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#favorites">Favorites</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#login" id="loginNavLink">Login</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#register" id="registerNavLink">Register</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="logoutNavLink">Logout</a>
+                        </li>
+
+                    </ul>
+
+
+
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- home page -->
+        <div id="homePage">
+
+            <div id="searchFormContainer">
+                <form class="d-flex" role="search" id="searchForm">
+
+                    <label for="searchInputEl">Search country</label>
+                    <input class="form-control me-2" list="countriesDataList" type="search" placeholder="Search"
+                        aria-label="Search" id="searchInputEl">
+                    <datalist id="countriesDataList">
+                        <!-- <option value="Chocolate">
+                        <option value="Coconut">
+                        <option value="Mint">
+                        <option value="Strawberry">
+                        <option value="Vanilla"> -->
+                    </datalist>
+                    <button class="btn btn-outline-dark" id="ascendingBtn">Ascending sort</button>
+                    <button class="btn btn-outline-dark" id="descendingBtn">Descending sort</button>
+                </form>
+
+            </div>
+
+            <div class="container-xl d-flex flex-wrap align-items-center justify-content-around align-content-around"
+                id="homePageContent">
+
+            </div>
+
+        </div>
+
+
+        <!-- details page -->
+        <div id="detailsPage">
+
+            <div class="container-xl d-flex flex-wrap align-items-center justify-content-around align-content-around"
+                id="detailsPageContent">
+                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500743.6543926417!2d24.422236884776645!3d42.721928504121024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a8fec1c85bf089%3A0xa01269bf4c10!2sBulgaria!5e0!3m2!1sen!2sbg!4v1664805465999!5m2!1sen!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+            </div>
+
+        </div>
+
+
+
+
+        <!-- login page -->
+        <div id="loginPage">
+
+            <div class="container-xl d-flex align-items-center justify-content-center" id="loginPageContent">
+
+                <form id="loginForm" action="#">
+
+                    <label for="loginUsername">Username:</label>
+                    <input required type="text" name="username" id="loginUsername" placeholder="Username">
+
+                    <label for="loginPassword">Password:</label>
+                    <input required type="password" name="password" id="loginPassword" placeholder="Password">
+
+                    <p class="error" id="loginError">Wrong credentials</p>
+
+                    <button id="loginBtn" type="submit">Login</button>
+
+                    <a href="#register">You don't have an account</a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- register page -->
+        <div id="registerPage">
+
+            <div class="container-xl d-flex align-items-center justify-content-center" id="registerPageContent">
+
+                <form id="registerForm" action="#">
+
+                    <label for="regUsername">Username:</label>
+                    <input required type="text" name="username" placeholder="Username" id="regUsername">
+
+                    <label for="regPassword">Password:</label>
+                    <input required type="password" name="regPassword" placeholder="Password" id="regPassword">
+
+                    <label for="regRePassword">Repeat password</label>
+                    <input required type="password" name="regRePassword" id="regRePassword"
+                        placeholder="Repeat password">
+
+                    <p class="error" id="passMismatchError">Your passwords don't match</p>
+
+                    <p class="error" id="userExistsError">Username is already taken</p>
+
+                    <button type="submit" id="registerBtn" disabled>Register</button>
+
+                    <a href="#login">Already have an account?</a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- error page -->
+    <div id="errorPage">
+        <div class="container-xl d-flex align-items-center justify-content-center" id="errorPageContent">
+            Error 404!
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+    <script src="./assets/js/pageElements.js"></script>
+    <script src="./assets/js/utils/constants.js"></script>
+    <script src="./assets/js/users.js"></script>
+    <script src="./assets/js/utils/util.js"></script>
+
+    <script src="./assets/js/models/User.js"></script>
+    <script src="./assets/js/models/UserManager.js"></script>
+
+    <script src="./assets/js/models/Country.js"></script>
+    <script src="./assets/js/models/CountryDetails.js"></script>
+    <script src="./assets/js/models/CountriesManager.js"></script>
+
+    <script src="./assets/js/controllers/homeController.js"></script>
+
+    <script src="./assets/js/controllers/loginController.js"></script>
+    <script src="./assets/js/controllers/registerController.js"></script>
+    <script src="./assets/js/controllers/detailsController.js"></script>
+
+    <script src="./assets/js/Router.js"></script>
+
+    <script src="./assets/js/controllers/mainController.js"></script>
+
+
+
+
+</body>
+
+</html>
